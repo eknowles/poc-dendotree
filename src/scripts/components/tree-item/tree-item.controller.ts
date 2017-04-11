@@ -5,14 +5,13 @@ import TreeItem from './tree-item';
 
 class TreeItemController {
   public item: TreeItem;
-  private $mdDialog: any;
-  private $mdToast: any;
   private open: boolean;
   private treeController: TreeViewController;
 
-  constructor($mdDialog, $mdToast) {
-    this.$mdDialog = $mdDialog;
-    this.$mdToast = $mdToast;
+  constructor(
+    private $mdDialog: angular.material.IDialogService,
+    private $mdToast: angular.material.IToastService,
+  ) {
     this.open = false;
   }
 
@@ -42,9 +41,10 @@ class TreeItemController {
     const rename = this.$mdDialog.prompt()
       .title('Rename Group')
       .textContent('Enter a new name for this group')
-      .placeholder(this.item.name)
+      .initialValue(this.item.name)
+      .placeholder('New group name')
       .targetEvent(ev)
-      .ok('Rename')
+      .ok('Rename Group')
       .cancel('Cancel');
 
     this.$mdDialog

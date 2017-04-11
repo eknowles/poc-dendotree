@@ -9,13 +9,15 @@
         <md-button ng-if="!$treeItemCtrl.item.children.length"
                    ng-click="$treeItemCtrl.insertSku($treeItemCtrl.item)"
                    class="md-icon-button tree-item__add-sku" aria-label="Add to Group">
+            <md-tooltip md-direction="left">Add SKU(s) to Group</md-tooltip>
             <md-icon>playlist_add</md-icon>
         </md-button>
 
         <p>{{ $treeItemCtrl.item.name }}</p>
 
-        <md-button ng-click="$treeItemCtrl.insert()"
+        <md-button ng-click="$treeItemCtrl.insertGroup($event)"
                    class="md-icon-button tree-item__new-group" aria-label="Create New Group">
+            <md-tooltip md-direction="left">Create New Group</md-tooltip>
             <md-icon>create_new_folder</md-icon>
         </md-button>
 
@@ -25,13 +27,13 @@
             </md-button>
             <md-menu-content width="1">
                 <md-menu-item>
-                    <md-button ng-click="$treeItemCtrl.renameGroup()">
+                    <md-button ng-click="$treeItemCtrl.renameGroup($event)">
                         Rename
                     </md-button>
                 </md-menu-item>
                 <md-menu-divider></md-menu-divider>
                 <md-menu-item>
-                    <md-button ng-click="$treeItemCtrl.removeGroup()">
+                    <md-button ng-click="$treeItemCtrl.removeGroup($event)">
                         Delete
                     </md-button>
                 </md-menu-item>
