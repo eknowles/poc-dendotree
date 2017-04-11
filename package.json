@@ -4,6 +4,7 @@
   "description": "ek-ng",
   "main": "index.js",
   "scripts": {
+    "deploy": "gh-pages -d dist",
     "start": "webpack-dev-server",
     "build": "webpack",
     "test": "karma start",
