@@ -7,7 +7,29 @@
                 </h3>
             </div>
         </md-toolbar>
-        <md-content flex></md-content>
+        <md-content flex>
+            <section layout-padding>
+                <h1>UX Notes</h1>
+                <p>This is a proof of concept that hopes to discover a better way to mass assign items to tree leaf elements, and also create a nice tree</p>
+
+                <h2>SKUs</h2>
+                <p>A SKU contains its <code>name</code> and <code>group</code> or (decision level), it also has a selected state (true or false).</p>
+
+                <ul>
+                    <li>SKU selection can be toggled by clicking on them</li>
+                    <li>Multi selection is done by selecting one element and holding <code>SHIFT</code> and selecting another</li>
+                    <li>Deselecting and item from multi can be done by holding <code>ALT</code> and click</li>
+                </ul>
+
+                <p>Once selecting has been made, the user should be able to drag and drop the items into a leaf</p>
+
+                <h2>Tree</h2>
+                <p><strong>Note: Delete function isn't working in this poc</strong></p>
+                <p>The tree contains two random groups to start with. You can insert a child group by clicking on the <code>new folder</code> icon when hovering over a group.</p>
+
+                <p>...</p>
+            </section>
+        </md-content>
     </div>
     <div flex=20 layout="row">
         <sku-view-component skus="$ctrl.skus"></sku-view-component>
