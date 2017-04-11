@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "deploy": "gh-pages -d dist",
+    "predeploy": "npm run build",
     "start": "webpack-dev-server",
     "build": "webpack",
     "test": "karma start",
