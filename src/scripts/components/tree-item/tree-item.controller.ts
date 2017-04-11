@@ -61,6 +61,10 @@ class TreeItemController {
   };
 
   public insertGroup(ev) {
+
+    // open group so user can see the new child's potential siblings
+    this.item.open = true;
+
     const rename = this.$mdDialog.prompt()
       .title('New Child Group')
       .textContent(`Enter name for the new Group`)
@@ -73,7 +77,6 @@ class TreeItemController {
       .show(rename)
       .then((result) => {
         this.item.children.push(new TreeItem(result));
-        this.item.open = true;
         this.$mdToast.show(
           this.$mdToast.simple()
             .textContent('Group Successfully Inserted!')
