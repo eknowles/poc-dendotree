@@ -1,10 +1,12 @@
+import * as template from './sku-item.html';
+
 import SkuItemController from './sku-item.controller';
 
 class SkuItemComponent implements ng.IComponentOptions {
   public bindings: any;
   public controller: any;
   public controllerAs: string;
-  public templateUrl: string;
+  public template: string;
   public require: any;
 
   constructor() {
@@ -15,7 +17,7 @@ class SkuItemComponent implements ng.IComponentOptions {
     };
     this.controller = SkuItemController;
     this.controllerAs = '$skuItemCtrl';
-    this.templateUrl = '/partials/components/sku-item.html';
+    this.template = template.toString();
   }
 }
 

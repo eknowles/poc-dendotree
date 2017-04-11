@@ -1,10 +1,12 @@
+import * as template from './tree-view.html';
+
 import TreeViewController from './tree-view.controller';
 
 class TreeViewComponent implements ng.IComponentOptions {
   public bindings: any;
   public controller: any;
   public controllerAs: string;
-  public templateUrl: string;
+  public template: string;
   public require: any;
 
   constructor() {
@@ -13,7 +15,7 @@ class TreeViewComponent implements ng.IComponentOptions {
     };
     this.controller = TreeViewController;
     this.controllerAs = '$treeViewCtrl';
-    this.templateUrl = '/partials/components/tree-view.html';
+    this.template = template.toString();
   }
 }
 

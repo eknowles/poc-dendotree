@@ -1,17 +1,18 @@
+import * as template from './main.html';
+
 import MainController from './main.controller';
 
 class MainComponent implements ng.IComponentOptions {
   public bindings: any;
   public controller: any;
   public controllerAs: string;
-  public templateUrl: string;
+  public template: string;
 
   constructor() {
     this.bindings = {};
     this.controller = MainController;
     this.controllerAs = '$ctrl';
-    this.templateUrl = '/partials/components/main.html';
-
+    this.template = template.toString();
   }
 }
 

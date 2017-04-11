@@ -1,10 +1,12 @@
+import * as template from './tree-item.html';
+
 import TreeItemController from './tree-item.controller';
 
 class TreeItemComponent implements ng.IComponentOptions {
   public bindings: any;
   public controller: any;
   public controllerAs: string;
-  public templateUrl: string;
+  public template: string;
   public require: any;
 
   constructor() {
@@ -15,7 +17,7 @@ class TreeItemComponent implements ng.IComponentOptions {
     };
     this.controller = TreeItemController;
     this.controllerAs = '$treeItemCtrl';
-    this.templateUrl = '/partials/components/tree-item.html';
+    this.template = template.toString();
   }
 }
 
