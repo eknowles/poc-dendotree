@@ -1,0 +1,12 @@
+<div flex layout="column" class="sku-view">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2 flex>{{ $skuViewCtrl.title }}</h2>
+        </div>
+    </md-toolbar>
+    <md-content flex style="border-right: 1px solid #d5d5d5;">
+        <sku-item-component item="sku" index="$index"
+                            parent-ctrl="$skuViewCtrl"
+                            ng-repeat="sku in $skuViewCtrl.skus track by sku.id"></sku-item-component>
+    </md-content>
+</div>

@@ -1,0 +1,54 @@
+<div class="tree-item">
+    <md-list-item class="tree-item__parent md-no-proxy">
+
+        <md-button ng-if="$treeItemCtrl.item.children.length" class="md-icon-button"
+                   ng-click="$treeItemCtrl.toggle()" aria-label="Toggle">
+            <md-icon>{{ $treeItemCtrl.toggleClass }}</md-icon>
+        </md-button>
+
+        <md-button ng-if="!$treeItemCtrl.item.children.length"
+                   ng-click="$treeItemCtrl.insertSku($treeItemCtrl.item)"
+                   class="md-icon-button tree-item__add-sku" aria-label="Add to Group">
+            <md-tooltip md-direction="left">Add SKU(s) to Group</md-tooltip>
+            <md-icon>playlist_add</md-icon>
+        </md-button>
+
+        <p>{{ $treeItemCtrl.item.name }}</p>
+
+        <md-button ng-click="$treeItemCtrl.insertGroup($event)"
+                   class="md-icon-button tree-item__new-group" aria-label="Create New Group">
+            <md-tooltip md-direction="left">Create New Group</md-tooltip>
+            <md-icon>create_new_folder</md-icon>
+        </md-button>
+
+        <md-menu class="md-secondary">
+            <md-button class="md-icon-button" ng-click="$mdMenu.open($event)">
+                <md-icon>more_vert</md-icon>
+            </md-button>
+            <md-menu-content width="1">
+                <md-menu-item>
+                    <md-button ng-click="$treeItemCtrl.renameGroup($event)">
+                        Rename
+                    </md-button>
+                </md-menu-item>
+                <md-menu-divider></md-menu-divider>
+                <md-menu-item>
+                    <md-button ng-click="$treeItemCtrl.removeGroup($event)">
+                        Delete
+                    </md-button>
+                </md-menu-item>
+            </md-menu-content>
+        </md-menu>
+    </md-list-item>
+    <!--<div class="dropzone">-->
+        <!--<div class="dropzone-inner">-->
+            <!--<div class="text">Drop SKUs into a new category</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <md-divider></md-divider>
+</div>
+<md-list ng-show="$treeItemCtrl.open && $treeItemCtrl.item.children" style="border-left: 2.35em solid transparent; padding:0;">
+    <tree-item-component tree-controller="$treeItemCtrl.treeController"
+                         item="child"
+                         ng-repeat="child in $treeItemCtrl.item.children"></tree-item-component>
+</md-list>
