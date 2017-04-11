@@ -9,9 +9,9 @@ class TreeItemComponent implements ng.IComponentOptions {
 
   constructor() {
     this.bindings = {
+      addSku: '&',
       item: '=',
       treeController: '=',
-      addSku: '&',
     };
     this.controller = TreeItemController;
     this.controllerAs = '$treeItemCtrl';

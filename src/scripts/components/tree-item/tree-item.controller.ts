@@ -1,22 +1,20 @@
-import * as interact from 'interactjs';
-
 import TreeViewController from './../tree-view/tree-view.controller';
 import TreeItem from './tree-item';
 
 class TreeItemController {
   public item: TreeItem;
-  private open: boolean;
+  private open: boolean = false;
   private treeController: TreeViewController;
 
   constructor(
     private $mdDialog: angular.material.IDialogService,
     private $mdToast: angular.material.IToastService,
   ) {
-    this.open = false;
+    // constructive comment here
   }
 
   public insertSku() {
-    console.log(this.item.breadcrumbs());
+    // console.log(this.item.breadcrumbs());
   }
 
   public toggle() {
@@ -57,7 +55,9 @@ class TreeItemController {
             .position('bottom right')
             .hideDelay(3000),
         );
-      }, () => {});
+      }, () => {
+        // err
+      });
   };
 
   public insertGroup(ev) {
@@ -83,7 +83,9 @@ class TreeItemController {
             .position('bottom right')
             .hideDelay(3000),
         );
-      }, () => {});
+      }, () => {
+        // err
+      });
   }
 
 }

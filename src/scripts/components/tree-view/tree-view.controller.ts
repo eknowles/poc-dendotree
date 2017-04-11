@@ -6,14 +6,10 @@ import TreeItem from '../tree-item/tree-item';
 class TreeViewController {
   public tree: TreeItem[] = [];
   public skus: SkuItem[];
-  public title: string;
+  public title: string = 'Tree View';
 
-  constructor() {
-    this.title = 'Tree View';
-  }
-
-  public removeItem(treeId) {
-    this.findAndRemoveId(this.tree);
+  public removeItem(treeId: string) {
+    this.tree = this.findAndRemoveId(this.tree, treeId);
   }
 
   public findAndRemoveId(items: TreeItem[], treeId: string): TreeItem[] {
